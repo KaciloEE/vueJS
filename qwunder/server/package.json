@@ -1,22 +1,38 @@
 {
   "name": "server",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "nodemon app.js --exec  \"npm run lint && node\"",
+    "lint": "eslint **/*.js",
+    "lint:fix": "eslint **/*.js  --fix",
+    "seed": "node seed"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "body-parser": "~1.18.2",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.9",
-    "express": "~4.15.5",
-    "morgan": "~1.9.0",
-    "pug": "2.0.0-beta11",
-    "sequelize": "^4.13.8",
-    "serve-favicon": "~2.4.5",
-    "sqlite": "^2.8.0"
+    "bcrypt-nodejs": "0.0.3",
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
+    "express": "^4.15.4",
+    "joi": "^10.6.0",
+    "jsonwebtoken": "^8.0.0",
+    "morgan": "^1.8.2",
+    "passport": "^0.4.0",
+    "passport-jwt": "^3.0.0",
+    "sequelize": "^4.8.0",
+    "sqlite3": "^3.1.8"
   },
   "devDependencies": {
-    "nodemon": "^1.12.1"
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "eslint": "^4.6.0",
+    "nodemon": "^1.11.0"
   }
 }
